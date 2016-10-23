@@ -229,10 +229,10 @@ function run(msg, matches)
 			   if not is_owner(msg) and not is_sudo(msg) then
 				   redis:setex("wait:"..msg.from.id, 30, true)
 				   redis:set("sticker:photo", "waiting")
-    	     return 'Please send your sticker now\n\nPowered by '..team..'\nJoin us :'
+    	     return 'Please send your sticker now\n\nPowered by '
 				 end
     	redis:set("sticker:photo", "waiting")
-    	return 'Please send your sticker now\n\nPowered by '..team..'\nJoin us :'
+    	return 'Please send your sticker now\n\nPowered by '
 			elseif redis:get("wait:"..msg.from.id) then
 			return "Please wait for 30 second."
 			end
@@ -241,10 +241,10 @@ function run(msg, matches)
 			   if not is_owner(msg) and not is_sudo(msg) then
 				   redis:setex("wait:"..msg.from.id, 30, true)
 				   redis:set("photo:sticker", "waiting")
-           return 'Please send your photo now\n\nPowered by '..team..'\nJoin us :'
+           return 'Please send your photo now\n\nPowered by '
 				 end
       redis:set("photo:sticker", "waiting")
-      return 'Please send your photo now\n\nPowered by '..team..'\nJoin us :'
+      return 'Please send your photo now\n\nPowered by '
 		  elseif redis:get("wait:"..msg.from.id) then
 			return "Please wait for 30 second."
 			end
@@ -257,7 +257,7 @@ function run(msg, matches)
 	    end
 	   --Version.
 	   --please put your id here:
-    local sudo_id = 123456789
+    local sudo_id = 10836
        --Please put your id here.
 	   --Setsudo:
 	if matches[1]:lower() == "setsudo" then
